@@ -5,17 +5,12 @@ const BASE_URL = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprit
 function Pokecard({ id, name, type, base_experience }) {
   let url = `${BASE_URL}${id}.png`;
 
-  let style = {
-    backgroundImage: `url(${url})`,
-    backgroundRepeat: 'no-repeat',
-    backgroundColor: 'grey',
-    backgroundPosition: 'center',
-  };
   return (
-    <div style={style} className="Pokecard">
-      <h4 className="Pokecard name">{name}</h4>
-      <p>Type: {type}</p>
-      <p>EXP: {base_experience}</p>
+    <div className="Pokecard">
+      <h4 className="Pokecard-name">{name}</h4>
+      <img className="Pokecard-image" src={url} alt="pokemon" />
+      <p className="Pokecard-type">Type: {type}</p>
+      <p calssName="Pokecard-base-experience">EXP: {base_experience}</p>
     </div>
   );
 }
